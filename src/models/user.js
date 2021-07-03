@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const Task = require("./task");
 
-const userSchema = new mongoose.Schema(
+const userSchema = mongoose.Schema(
   {
     name: { type: String, required: true, trim: true },
     password: {
@@ -65,7 +65,7 @@ userSchema.methods.generateAuthToken = async function () {
 };
 
 userSchema.virtual("tasks", {
-  ref: "Task",
+  ref: "task",
   localField: "_id",
   foreignField: "owner",
 });
