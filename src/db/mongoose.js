@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 mongoose.connect(
-  process.env.MONGODB_CONNECTION_STRING,
+  process.env.MONGODB_URL,
   {
     useNewUrlParser: true,
     useFindAndModify: false,
