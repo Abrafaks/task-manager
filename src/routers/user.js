@@ -45,7 +45,6 @@ router.post("/users/login", async (req, res) => {
 
     res.send({ user, token });
   } catch (e) {
-    console.log();
     res.status(400).send();
   }
 });
@@ -93,7 +92,7 @@ router.post(
 
 router.get("/users/me", auth, async (req, res) => {
   try {
-    res.status(201).send(req.user);
+    res.send(req.user);
   } catch (e) {
     res.status(500).send();
   }

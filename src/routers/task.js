@@ -43,7 +43,7 @@ router.get("/tasks", auth, async (req, res) => {
       })
       .execPopulate();
 
-    res.status(201).send(req.user.tasks);
+    res.send(req.user.tasks);
   } catch (e) {
     console.log(e);
     res.status(500).send();
